@@ -3,11 +3,16 @@ class Person {
   final String name;
   final int age;
   // TODO: Implement fromJson
+  factory Person.fromJson(Map<String, dynamic> json) {
+    return Person(name: json['name'], age: json['age']);
+  }
   // TODO: Implement toJson
-    var ps = {
-      'name':this.name,
-      'age':this.age
-    };
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = new Map<String, dynamic>();
+    data['name'] = this.name;
+    data['age'] = this.age;
+    return data;
+  }
 }
 
 void main() {
@@ -18,5 +23,3 @@ void main() {
   final json = person.toJson();
   print(json);
 }
-
-//chua duoc
