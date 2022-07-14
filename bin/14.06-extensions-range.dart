@@ -6,3 +6,14 @@ void main() {
 }
 
 //chua duoc
+extension MathExt on int {
+  List<int> rangeTo(int other) {
+    List<int> result = [];
+    if (other < this) return [];
+
+    for (var i = this; i <= other; i++) {
+      result.add(i);
+    }
+    return result;
+  }
+}

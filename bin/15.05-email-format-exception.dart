@@ -12,3 +12,15 @@ void main() {
 }
 
 //chua duoc
+class EmailAddress {
+  late String email;
+  EmailAddress(String input) {
+    if (input.isEmpty) {
+      throw FormatException("empty email");
+    } else if (!input.contains("@")) {
+      throw FormatException("email doesn't contain a `@` character");
+    } else {
+      this.email = input;
+    }
+  }
+}

@@ -7,3 +7,15 @@
 // The program should print `Done` after the countdown has completed.
 
 // Use `Future`s, `async` and `await` as needed.
+
+Future countdown(int n) async {
+  for (var i = 0; i <= n; i++) {
+    print(i);
+    await Future.delayed(Duration(seconds: 1));
+  }
+  print("Done");
+}
+
+void main() {
+  countdown(5);
+}
